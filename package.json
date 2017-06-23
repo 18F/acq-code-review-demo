@@ -1,0 +1,17 @@
+{
+  "name": "code-review-demo",
+  "version": "1.0.0",
+  "description": "A project just to demo how a code review might go down",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap 'tests/**/*.js' --cov"
+  },
+  "author": {
+    "name": "Greg Walker",
+    "email": "michael.walker@gsa.gov"
+  },
+  "license": "CC0-1.0",
+  "dependencies": {
+    "tap": "^10.5.2"
+  }
+}
