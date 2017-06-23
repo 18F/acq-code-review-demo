@@ -9,4 +9,4 @@ test:
   pre:
     - ./cc-test-reporter before-build
   override:
-    - npm test; ./cc-test-reporter after-build --exit-code $?
+    - npm test -- --coverage-report=lcov; ./cc-test-reporter after-build --exit-code $?
