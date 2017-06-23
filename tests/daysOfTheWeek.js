@@ -10,7 +10,8 @@ tap.test('getDayName', (getDayNameTest) => {
   getDayNameTest.throws(() => target.getDayName({}), 'throws when using an object input');
   getDayNameTest.throws(() => target.getDayName(true), 'throws when using a boolean input');
 
-  const validDateObject = new Date(2017, 6, 23);
+  // Javascript months start at 0, so month 5 is actually June.
+  const validDateObject = new Date(2017, 5, 23);
   const validDateValue = validDateObject.getTime();
   getDayNameTest.equal(target.getDayName(validDateValue), 'Friday', 'get expected day name when using a Date timestamp');
   getDayNameTest.equal(target.getDayName(validDateObject), 'Friday', 'get expected day name when using a Date object');
