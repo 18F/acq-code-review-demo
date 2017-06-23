@@ -2,9 +2,7 @@ const tap = require('tap');
 const target = require('../lib/daysOfTheWeek');
 
 tap.test('getDayName', (getDayNameTest) => {
-  getDayNameTest.throws(() => target.getDayName(), 'throws when using no input');
   getDayNameTest.throws(() => target.getDayName(null), 'throws when using a null input');
-  getDayNameTest.throws(() => target.getDayName(undefined), 'throws when using an undefined input');
   getDayNameTest.throws(() => target.getDayName('string'), 'throws when using a string input');
   getDayNameTest.throws(() => target.getDayName([]), 'throws when using an array input');
   getDayNameTest.throws(() => target.getDayName({}), 'throws when using an object input');
@@ -15,5 +13,6 @@ tap.test('getDayName', (getDayNameTest) => {
   const validDateValue = validDateObject.getTime();
   getDayNameTest.equal(target.getDayName(validDateValue), 'Friday', 'get expected day name when using a Date timestamp');
   getDayNameTest.equal(target.getDayName(validDateObject), 'Friday', 'get expected day name when using a Date object');
+  getDayNameTest.equal(target.getDayName(), target.getDayName(new Date()), 'get expected day name when using no input');
   getDayNameTest.end();
 });
